@@ -1,0 +1,12 @@
+def remove_duplicates(nums)
+    prev_ele = nil
+    nums.each_with_index do |e, i|
+        if prev_ele == e
+            nums.delete_at(i-1)
+        end
+        
+        prev_ele = e
+    end
+end
+
+remove_duplicates(nums)

@@ -1,0 +1,23 @@
+# Example Database Config File
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # url: <%= ENV['DATABASE_URL'] %> # Should use DATABASE_URL to be consistent with Docker DB config
+  # host: localhost # If not using DATABASE_URL, then just use 'host'
+
+development:
+  <<: *default
+  database: todo_app_dev
+  username: shahanahamzamamutty
+  password: shahana7
+  host: localhost
+  timeout: 5000
+
+test:
+  <<: *default
+  database: todo_app_test
+  username: shahanahamzamamutty
+  password: shahana7
+  host: localhost
+
